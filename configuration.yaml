@@ -51,11 +51,13 @@ tts:
 
 # Device tracking with NMAP
 device_tracker:
-  platform: nmap_tracker
+  #platform: nmap_tracker 
+  platform: bluetooth_tracker
   home_interval: 10
   hosts:
     192.168.0.9
     192.168.0.13
+
 
 # Z-Wave config
 zwave:
