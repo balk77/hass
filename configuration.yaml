@@ -1,6 +1,6 @@
 homeassistant:
   # Name of the location where Home Assistant is running
-  name: Home
+  name: Home Linda en Sander
   # Location required to calculate the time the sun rises and sets
   latitude: 52.007
   longitude: 4.3512
@@ -20,6 +20,8 @@ frontend:
 http:
   # Uncomment this to add a password (recommended!)
   # api_password: PASSWORD
+  # Uncomment this if you are using SSL or running in Docker etc
+  # base_url: example.duckdns.org:8123
 
 # Checks for available updates
 updater:
@@ -43,6 +45,10 @@ sun:
 sensor:
   platform: yr
 
+# Text to speech
+tts:
+  platform: google
+
 # Device tracking with NMAP
 device_tracker:
   platform: nmap_tracker
@@ -53,4 +59,4 @@ device_tracker:
 
 # Z-Wave config
 zwave:
-  usb_path: /dev/ttyZWV
+  usb_path: /dev/ttyACM0
