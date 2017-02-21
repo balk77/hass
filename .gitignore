@@ -3,6 +3,7 @@
 
 #project specific files
 known_devices.yaml
+secrets.yaml
 
 # User-specific files
 *.suo
