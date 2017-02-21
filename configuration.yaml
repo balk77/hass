@@ -2,8 +2,9 @@ homeassistant:
   # Name of the location where Home Assistant is running
   name: Home Linda en Sander
   # Location required to calculate the time the sun rises and sets
-  latitude: 52.007
-  longitude: 4.3512
+  latitude: !secret latitude
+  longitude: !secret longitude
+
   # Impacts weather/sunrise data (altitude above sea level in meters)
   elevation: 0
   # metric for Metric, imperial for Imperial
@@ -51,13 +52,34 @@ tts:
 
 # Device tracking with NMAP
 device_tracker:
-  #platform: nmap_tracker 
-  platform: bluetooth_tracker
-  home_interval: 10
-  hosts:
-    192.168.0.9
-    192.168.0.13
+  #platform: nmap_tracker
+  - platform: bluetooth_le_tracker
+#  home_interval: 10
+#  hosts:
+#    192.168.0.9
+#    192.168.0.13
 
+# MQTT config
+mqtt:
+  broker: 192.168.0.10
+  port: 1883
+  client_id: home-assistant
+  keepalive: 60
+#  username: USERNAME
+#  password: PASSWORD
+#  certificate: /home/paulus/dev/addtrustexternalcaroot.crt
+  protocol: 3.1
+  discovery: "discovery/#"
+#  birth_message:
+#    topic: 'hass/status'
+#    payload: 'online'
+#    qos: 1
+#    retain: true
+#  will_message:
+#    topic: 'hass/status'
+#    payload: 'offline'
+#    qos: 1
+#    retain: true
 
 # Z-Wave config
 zwave:
